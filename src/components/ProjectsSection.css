@@ -1,0 +1,17 @@
+.projects-section {
+  margin-top: 56px;
+}
+
+.projects-section__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  color: #241f38;
+  margin-bottom: 20px;
+}
+
+.projects-section__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}

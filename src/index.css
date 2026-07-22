@@ -1,0 +1,32 @@
+:root {
+  --bg-purple: #9689c4;
+  --navbar-dark: #1e1b24;
+  --card-cream: #eae7ec;
+  --ink: #2d2a4a;
+  --pink-card: #e6b8cf;
+  --pink-card-frame: #d99cbd;
+  --mauve-card: #5f5578;
+  --mauve-card-frame: #45405c;
+  --placeholder-grey: #dcdadf;
+  --font-display: 'Cormorant Garamond', serif;
+  --font-body: 'Work Sans', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-purple);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  color: inherit;
+}

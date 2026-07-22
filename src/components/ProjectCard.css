@@ -1,0 +1,79 @@
+.project-card {
+  width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.project-card__frame {
+  width: 220px;
+  height: 170px;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card--ecole .project-card__frame {
+  background: var(--pink-card);
+  border: 2px solid var(--pink-card-frame);
+}
+
+.project-card--personnel .project-card__frame {
+  background: var(--mauve-card);
+  border: 2px solid var(--mauve-card-frame);
+}
+
+.project-card__video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+  background: #000;
+}
+
+.project-card__placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--placeholder-grey);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: rgba(45, 42, 74, 0.55);
+  text-align: center;
+}
+
+.project-card__title {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 4px 0 0;
+  color: #241f38;
+}
+
+.project-card__description {
+  font-size: 0.75rem;
+  color: rgba(36, 31, 56, 0.75);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.project-card__tools {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  margin: 4px 0 0;
+}
+
+.project-card__tools li {
+  font-size: 0.65rem;
+  background: rgba(45, 42, 74, 0.08);
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: #241f38;
+}

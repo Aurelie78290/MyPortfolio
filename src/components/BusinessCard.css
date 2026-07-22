@@ -1,0 +1,71 @@
+.business-card {
+  background: var(--card-cream);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  padding: 32px 40px;
+  gap: 32px;
+  box-shadow: 0 12px 30px rgba(30, 20, 50, 0.18);
+}
+
+.business-card__quote {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 130px;
+}
+
+.business-card__quote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+  color: var(--ink);
+}
+
+.business-card__signature {
+  align-self: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  margin-top: 16px;
+}
+
+.business-card__divider {
+  width: 1px;
+  align-self: stretch;
+  background: rgba(45, 42, 74, 0.25);
+}
+
+.business-card__contact {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.business-card__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.business-card__label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(45, 42, 74, 0.55);
+}
+
+@media (max-width: 700px) {
+  .business-card {
+    flex-direction: column;
+  }
+  .business-card__divider {
+    width: 100%;
+    height: 1px;
+  }
+}
