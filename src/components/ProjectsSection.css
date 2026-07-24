@@ -1,17 +1,18 @@
 .projects-section {
-  margin-top: 56px;
+  margin-top: 86px;
 }
 
 .projects-section__title {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 1rem;
-  color: #241f38;
-  margin-bottom: 20px;
+  font-size: 1.75rem;
+  color: var(--card-cream);
+  margin-bottom: 40px;
 }
 
 .projects-section__grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  justify-content: space-around;
+  gap: 4rem;
 }

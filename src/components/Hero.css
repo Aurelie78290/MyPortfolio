@@ -4,10 +4,10 @@
 }
 
 .hero__title {
-  font-family: var(--font-display);
+  font-family: var(--font-title);
   font-weight: 600;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   letter-spacing: 0.04em;
-  color: #241f38;
+  color: var(--title);
   margin: 0;
 }
