@@ -16,13 +16,21 @@
 }
 
 .project-card--ecole .project-card__frame {
+  height: auto;
+  padding: 26px 26px 64px;
   background: var(--pink-card);
-  border: 2px solid var(--pink-card-frame);
+  border: none;
+  border-radius: 2px;
+  box-shadow: 14px 18px 22px rgba(30, 20, 50, 0.35);
 }
 
 .project-card--personnel .project-card__frame {
-  background: var(--mauve-card);
-  border: 2px solid var(--mauve-card-frame);
+  height: auto;
+  padding: 26px 26px 64px;
+  background: var(--navbar-logo);
+  border: none;
+  border-radius: 2px;
+  box-shadow: 14px 18px 22px rgba(30, 20, 50, 0.35);
 }
 
 .project-card__video {
@@ -44,6 +52,17 @@
   font-size: 0.7rem;
   color: rgba(45, 42, 74, 0.55);
   text-align: center;
+}
+
+.project-card--ecole .project-card__video,
+.project-card--ecole .project-card__placeholder,
+.project-card--personnel .project-card__video,
+.project-card--personnel .project-card__placeholder {
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--bg-purple);
+  box-shadow: 0 6px 8px rgba(30, 20, 50, 0.3);
+  border-radius: 1px;
 }
 
 .project-card__title {
