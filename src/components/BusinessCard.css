@@ -1,11 +1,39 @@
 .business-card {
   background: var(--card-cream);
+  border: 1px solid var(--title);
+  padding: 56px 50px;
+  box-shadow: 0 12px 30px rgba(30, 20, 50, 0.18);
+  scroll-margin-top: 110px;
+}
+
+.business-card__header {
   display: flex;
   align-items: center;
-  border: 1px solid var(--title);
-  padding: 72px 50px;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.business-card__avatar {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: var(--placeholder-grey);
+  object-fit: cover;
+}
+
+.business-card__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--title);
+  margin: 0;
+}
+
+.business-card__body {
+  display: flex;
+  align-items: center;
   gap: 32px;
-  box-shadow: 0 12px 30px rgba(30, 20, 50, 0.18);
 }
 
 .business-card__quote {
@@ -19,8 +47,8 @@
 .business-card__quote p {
   font-family: var(--font-display);
   font-style: normal;
-  font-size: 1rem;
-  line-height: 2.5;
+  font-size: 0.85rem;
+  line-height: 2;
   margin: 0;
   color: var(--ink);
 }
@@ -93,7 +121,7 @@
 }
 
 @media (max-width: 700px) {
-  .business-card {
+  .business-card__body {
     flex-direction: column;
   }
   .business-card__divider {
