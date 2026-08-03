@@ -1,19 +1,20 @@
+import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
-import Hero from './components/Hero.jsx'
-import BusinessCard from './components/BusinessCard.jsx'
-import ProjectsSection from './components/ProjectsSection.jsx'
-import { ecoleProjects, personnelsProjects } from './data/projects.js'
+import ScrollToHash from './components/ScrollToHash.jsx'
+import HomePage from './pages/HomePage.jsx'
+import ProjectsPage from './pages/ProjectsPage.jsx'
 import './App.css'
 
 function App() {
   return (
     <div className="page">
       <Navbar />
+      <ScrollToHash />
       <main>
-        <Hero />
-        <BusinessCard />
-        <ProjectsSection title="Projets École :" projects={ecoleProjects} variant="ecole" />
-        <ProjectsSection title="Projets Personnels :" projects={personnelsProjects} variant="personnel" />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/projets" element={<ProjectsPage />} />
+        </Routes>
       </main>
     </div>
   )

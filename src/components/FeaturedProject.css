@@ -1,0 +1,32 @@
+.featured-project {
+  margin-top: 86px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.featured-project__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.75rem;
+  color: var(--title);
+  margin: 0 0 40px;
+}
+
+.featured-project__link {
+  margin-top: 32px;
+  background: var(--title);
+  color: var(--card-cream);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  padding: 10px 32px;
+  border-radius: 999px;
+  transition: background 0.2s ease;
+}
+
+.featured-project__link:hover {
+  background: var(--pink-card);
+}
