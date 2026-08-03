@@ -17,12 +17,12 @@ Le site est ensuite accessible sur http://localhost:5173
 src/
   components/
     Navbar.jsx        -> barre de nav en haut
-    Hero.jsx           -> titre "Mon Portfolio"
+    Hero.jsx           -> titre "Portfolio"
     BusinessCard.jsx    -> carte citation + coordonnées
     ProjectsSection.jsx -> une section (École ou Personnels)
     ProjectCard.jsx      -> une carte de projet (vidéo + outils)
   data/
-    projects.js -> contenu des projets (à modifier avec tes vraies vidéos/outils)
+    projects.js -> contenu des projets
 ```
 
 ## Pour ajouter des projets
