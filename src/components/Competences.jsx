@@ -46,7 +46,7 @@ function LandingPath() {
         preserveAspectRatio="none"
       >
         <path
-          d="M4,8 Q100,52 196,30"
+          d="M4,8 Q100,52 185,30"
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
@@ -54,50 +54,62 @@ function LandingPath() {
           strokeLinecap="round"
         />
       </svg>
+      <span className="competences__plane" role="img" aria-label="Avion">
+        ✈️
+      </span>
     </div>
   );
 }
 
+const skillGroups = ["frontend", "backend", "tools", "other"];
+
 const categories = [
   {
     id: "etudes",
-    label: "Études",
+    label: "Mon Parcours",
     type: "text",
-    text: "À compléter : formations, diplômes, certifications...",
+    text: [
+      "Mon parcours s'est construit en deux chapitres : comprendre les organisations dans un premier temps, puis construire les outils qui les font avancer.",
+      "Diplômée en 2010 d'un Master 2 en Management et ingéniérie économique, j'ai construit le début de ma carrière dans l'univers de la supervision d'équipe et de la Relation Client, l'écoute des besoins clients étant alors au centre de mes préoccupations.",
+      "Par passion et envie de mé réinventer, j'ai ensuite choisi de devenir développeuse web. À la Wild Code School, j'ai appris à concevoir des applications full-stack et à collaborer en équipe selon les méthodes Agiles.",
+    ],
   },
   {
     id: "hard-skills",
-    label: "Hard Skills",
+    label: "Mes Hard Skills",
     type: "tags",
     items: [
-      "React",
-      "Vite",
-      "HTML",
-      "CSS3",
-      "JavaScript",
-      "TypeScript",
-      "Node.js",
-      "Express.js",
-      "API REST",
-      "MySQL",
-      "GitHub",
-      "Figma",
-      "Jira",
-      "Trello",
-      "WordPress",
-      "Vercel",
-      "Railway",
-      "Pack Office",
-      "Canva",
-      "Salesforce",
-      "Power BI",
+      { name: "React", group: "frontend" },
+      { name: "Vite", group: "frontend" },
+      { name: "HTML", group: "frontend" },
+      { name: "CSS3", group: "frontend" },
+      { name: "JavaScript", group: "frontend" },
+      { name: "TypeScript", group: "frontend" },
+      { name: "Node.js", group: "backend" },
+      { name: "Express.js", group: "backend" },
+      { name: "API REST", group: "backend" },
+      { name: "MySQL", group: "backend" },
+      { name: "GitHub", group: "tools" },
+      { name: "Figma", group: "tools" },
+      { name: "Jira", group: "tools" },
+      { name: "WordPress", group: "tools" },
+      { name: "Vercel", group: "tools" },
+      { name: "Railway", group: "tools" },
+      { name: "Trello", group: "other" },
+      { name: "Pack Office", group: "other" },
+      { name: "Canva", group: "other" },
+      { name: "Salesforce", group: "other" },
+      { name: "Power BI", group: "other" },
     ],
   },
   {
     id: "soft-skills",
-    label: "Soft Skills",
+    label: "Mes Soft Skills",
     type: "text",
-    text: "À compléter : communication, travail d'équipe, adaptabilité...",
+    text: [
+      "Mon approche du développement est influencée par ce qui m'anime au quotidien. Les pays nordiques m'inspirent par leur esthétique épurée et leur sens de la fonctionnalité. La création textile développe ma créativité et mon souci du détail. Le golf m'apprend la patience et la concentration, tandis que la danse classique cultive la rigueur, l'équilibre et la précision.",
+      "Ces passions façonnent naturellement ma manière de travailler : avec curiosité, méthode, sens de l'analyse et envie de créer des expériences utiles et soignées.",
+    ],
   },
 ];
 
@@ -128,7 +140,19 @@ function Competences() {
                 }`}
                 onClick={() => setActiveId(category.id)}
               >
-                {category.label}
+                {(() => {
+                  const [firstWord, ...rest] = category.label.split(" ");
+                  return (
+                    <>
+                      <span className="competences__bubble-word">
+                        {firstWord}
+                      </span>
+                      <span className="competences__bubble-word">
+                        {rest.join(" ")}
+                      </span>
+                    </>
+                  );
+                })()}
               </button>
               {index < categories.length - 1 && (
                 <FlightPathArrow flip={index % 2 === 1} />
@@ -161,15 +185,42 @@ function Competences() {
             </button>
             <h3 className="competences__modal-title">{active.label}</h3>
             {active.type === "tags" ? (
-              <ul className="competences__list">
-                {active.items.map((item) => (
-                  <li key={item} className="competences__item">
-                    {item}
-                  </li>
-                ))}
-              </ul>
+              <div className="competences__marquee-rows">
+                {skillGroups.map((group, rowIndex) => {
+                  const groupItems = active.items.filter(
+                    (item) => item.group === group,
+                  );
+                  return (
+                    <div key={group} className="competences__marquee-row">
+                      <div
+                        className="competences__marquee-track"
+                        style={{
+                          animationDuration: `${groupItems.length * 6}s`,
+                          animationDirection:
+                            rowIndex % 2 === 1 ? "reverse" : "normal",
+                        }}
+                      >
+                        {[...groupItems, ...groupItems].map((item, index) => (
+                          <span
+                            key={`${item.name}-${index}`}
+                            className={`competences__item competences__item--${item.group}`}
+                          >
+                            {item.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             ) : (
-              <p className="competences__placeholder">{active.text}</p>
+              (Array.isArray(active.text) ? active.text : [active.text]).map(
+                (paragraph, index) => (
+                  <p key={index} className="competences__placeholder">
+                    {paragraph}
+                  </p>
+                ),
+              )
             )}
           </div>
         </div>
