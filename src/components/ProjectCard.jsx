@@ -1,10 +1,11 @@
+import { Link } from 'react-router-dom'
 import './ProjectCard.css'
 
 function ProjectCard({ project, variant }) {
-  const { title, description, videoSrc, tools } = project
+  const { id, title, description, videoSrc, tools } = project
 
   return (
-    <article className={`project-card project-card--${variant}`}>
+    <Link to={`/projets/${id}`} className={`project-card project-card--${variant}`}>
       <div className="project-card__frame">
         {videoSrc ? (
           <video
@@ -18,6 +19,9 @@ function ProjectCard({ project, variant }) {
         ) : (
           <div className="project-card__placeholder">Vidéo à venir</div>
         )}
+        <div className="project-card__overlay">
+          <span>Consulter</span>
+        </div>
       </div>
       <h3 className="project-card__title">{title}</h3>
       <p className="project-card__description">{description}</p>
@@ -26,7 +30,7 @@ function ProjectCard({ project, variant }) {
           <li key={tool}>{tool}</li>
         ))}
       </ul>
-    </article>
+    </Link>
   )
 }
 

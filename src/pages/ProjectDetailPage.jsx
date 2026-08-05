@@ -2,6 +2,16 @@ import { Link, useParams } from "react-router-dom";
 import { ecoleProjects, personnelsProjects } from "../data/projects.js";
 import "./ProjectDetailPage.css";
 
+function renderWithBold(text) {
+  return text.split(/(\*\*.*?\*\*)/g).map((part, index) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <strong key={index}>{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    )
+  );
+}
+
 function ProjectDetailPage() {
   const { id } = useParams();
   const project = [...ecoleProjects, ...personnelsProjects].find(
@@ -19,7 +29,17 @@ function ProjectDetailPage() {
     );
   }
 
-  const { title, description, tools, hosting, url, image } = project;
+  const {
+    title,
+    description,
+    longDescription,
+    tools,
+    url,
+    hosting,
+    videoSrc,
+    features,
+  } = project;
+  const descriptionParagraphs = (longDescription || description).split("\n\n");
 
   return (
     <section className="project-detail">
@@ -27,37 +47,66 @@ function ProjectDetailPage() {
         ← Retour aux projets
       </Link>
 
-      {image && (
-        <div className="project-detail__image">
-          <img src={image} alt={title} />
+      <div className="project-detail__content">
+        <div className="project-detail__media">
+          {videoSrc ? (
+            <video
+              className="project-detail__video"
+              src={videoSrc}
+              muted
+              loop
+              playsInline
+              controls
+            />
+          ) : (
+            <div className="project-detail__placeholder">Vidéo à venir</div>
+          )}
+        </div>
+
+        <div className="project-detail__info">
+          <h1 className="project-detail__title">{title}</h1>
+
+          {url && (
+            <a
+              href={`https://${url.replace(/^https?:\/\//, "")}`}
+              target="_blank"
+              rel="noreferrer"
+              className="project-detail__url"
+            >
+              {url}
+            </a>
+          )}
+
+          {hosting && hosting.length > 0 && (
+            <p className="project-detail__hosting">
+              Hébergé sur {hosting.join(" & ")}
+            </p>
+          )}
+
+          <ul className="project-detail__tools">
+            {tools.map((tool) => (
+              <li key={tool}>{tool}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <div className="project-detail__description">
+        {descriptionParagraphs.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
+
+      {features && features.length > 0 && (
+        <div className="project-detail__features">
+          <h2 className="project-detail__features-title">Fonctionnalités</h2>
+          <ul>
+            {features.map((feature, index) => (
+              <li key={index}>{renderWithBold(feature)}</li>
+            ))}
+          </ul>
         </div>
       )}
-
-      <h1 className="project-detail__title">{title}</h1>
-      <p className="project-detail__description">{description}</p>
-
-      {hosting && hosting.length > 0 && (
-        <p className="project-detail__hosting">
-          Hébergé sur {hosting.join(" & ")}
-        </p>
-      )}
-
-      {url && (
-        <a
-          href={`https://${url.replace(/^https?:\/\//, "")}`}
-          target="_blank"
-          rel="noreferrer"
-          className="project-detail__url"
-        >
-          {url}
-        </a>
-      )}
-
-      <ul className="project-detail__tools">
-        {tools.map((tool) => (
-          <li key={tool}>{tool}</li>
-        ))}
-      </ul>
     </section>
   );
 }

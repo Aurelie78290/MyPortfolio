@@ -1,9 +1,50 @@
 .business-card {
+  position: relative;
   background: var(--card-cream);
   border: 1px solid var(--title);
   padding: 56px 50px;
   box-shadow: 0 12px 30px rgba(30, 20, 50, 0.18);
   scroll-margin-top: 110px;
+}
+
+.business-card__stamp {
+  position: absolute;
+  top: 36px;
+  right: 72px;
+  width: 64px;
+  height: 78px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  background: var(--card-cream);
+  border: 2px dashed var(--pink-card-frame);
+  border-radius: 3px;
+  box-shadow: 0 6px 10px rgba(30, 20, 50, 0.25);
+  transform: rotate(-8deg);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 2;
+}
+
+.business-card__stamp:hover {
+  transform: rotate(-3deg) scale(1.06);
+}
+
+.business-card__stamp-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.business-card__stamp-label {
+  font-size: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--navbar-logo);
+  text-align: center;
+  line-height: 1.2;
 }
 
 .business-card__header {
