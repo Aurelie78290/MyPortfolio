@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ProjectCard from "./ProjectCard.jsx";
+import BoardingPassCard from "./BoardingPassCard.jsx";
 import { personnelsProjects } from "../data/projects.js";
 import "./FeaturedProject.css";
 
@@ -8,11 +8,16 @@ function FeaturedProject() {
 
   return (
     <section className="featured-project">
-      <h2 className="featured-project__title">Mon dernier projet</h2>
-      <ProjectCard project={project} variant="personnel" />
-      <Link to="/projets" className="featured-project__link">
-        Voir tous les projets
-      </Link>
+      <div className="featured-project__header">
+        <h2 className="featured-project__title">Mon dernier projet</h2>
+        <Link to="/projets" className="featured-project__link">
+          Voir tous les projets
+          <span className="featured-project__arrow" aria-hidden="true">
+            →
+          </span>
+        </Link>
+      </div>
+      <BoardingPassCard project={project} />
     </section>
   );
 }

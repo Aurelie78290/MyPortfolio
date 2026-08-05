@@ -1,0 +1,159 @@
+.boarding-pass {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: 550px;
+  border-radius: 18px;
+  border: 2px solid var(--pink-card-frame);
+  overflow: hidden;
+  background: var(--card-cream);
+  box-shadow: 14px 18px 22px rgba(30, 20, 50, 0.35);
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.boarding-pass:hover {
+  box-shadow: 18px 22px 26px rgba(30, 20, 50, 0.4);
+  transform: scale(1.03);
+}
+
+.boarding-pass__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  color: var(--card-cream);
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    background 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.boarding-pass:hover .boarding-pass__overlay {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+}
+
+.boarding-pass__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--title);
+  padding: 14px 22px;
+}
+
+.boarding-pass__label {
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--card-cream);
+}
+
+.boarding-pass__badge {
+  background: var(--pink-card);
+  color: var(--title);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 4px 14px;
+  border-radius: 999px;
+}
+
+.boarding-pass__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 24px 20px 24px 22px;
+}
+
+.boarding-pass__info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.boarding-pass__row {
+  display: flex;
+  flex-direction: row;
+  max-width: 210px;
+  justify-content: flex-start;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.boarding-pass__row-label {
+  flex: 0 0 60px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navbar-logo);
+}
+
+.boarding-pass__row-value {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.boarding-pass__tools {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: normal;
+}
+
+.boarding-pass__tool-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.boarding-pass__photo {
+  position: relative;
+  flex-shrink: 0;
+  width: 200px;
+  height: 145px;
+  overflow: hidden;
+  margin: -24px -20px -24px 0;
+  mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%);
+  -webkit-mask-image: radial-gradient(
+    ellipse at center,
+    black 55%,
+    transparent 100%
+  );
+}
+
+.boarding-pass__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.boarding-pass__photo-placeholder {
+  width: 100%;
+  height: 100%;
+  background: var(--placeholder-grey);
+}
