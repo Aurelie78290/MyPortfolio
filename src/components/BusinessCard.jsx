@@ -1,4 +1,5 @@
-import { useId } from "react";
+import { useId, useState } from "react";
+import TravelCrossword from "./TravelCrossword.jsx";
 import "./BusinessCard.css";
 
 function SketchBorder() {
@@ -36,8 +37,27 @@ function SketchBorder() {
 }
 
 function BusinessCard() {
+  const [isCrosswordOpen, setCrosswordOpen] = useState(false);
+
   return (
     <section id="qui-suis-je" className="business-card">
+      <button
+        type="button"
+        className="business-card__stamp"
+        onClick={() => setCrosswordOpen(true)}
+        aria-label="Petit jeu : mots fléchés sur mes voyages"
+        title="Petit jeu : mes voyages"
+      >
+        <span className="business-card__stamp-icon" aria-hidden="true">
+          ✈️
+        </span>
+        <span className="business-card__stamp-label">Mes voyages</span>
+      </button>
+
+      {isCrosswordOpen && (
+        <TravelCrossword onClose={() => setCrosswordOpen(false)} />
+      )}
+
       <div className="business-card__header">
         <img
           className="business-card__avatar"

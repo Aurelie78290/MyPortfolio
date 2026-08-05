@@ -79,7 +79,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 24px 20px 24px 22px;
+  padding: 16px 20px 16px 22px;
 }
 
 .boarding-pass__info {
@@ -134,10 +134,10 @@
 .boarding-pass__photo {
   position: relative;
   flex-shrink: 0;
-  width: 200px;
-  height: 145px;
+  width: 210px;
+  height: 155px;
   overflow: hidden;
-  margin: -24px -20px -24px 0;
+  margin: -64px -20px -64px 0;
   mask-image: radial-gradient(ellipse at center, black 55%, transparent 100%);
   -webkit-mask-image: radial-gradient(
     ellipse at center,
@@ -156,4 +156,37 @@
   width: 100%;
   height: 100%;
   background: var(--placeholder-grey);
+}
+
+.boarding-pass__perforation {
+  position: relative;
+  height: 0;
+  border-top: 2px dashed var(--pink-card-frame);
+}
+
+.boarding-pass__perforation::before,
+.boarding-pass__perforation::after {
+  content: "";
+  position: absolute;
+  top: -11px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--bg-purple);
+}
+
+.boarding-pass__perforation::before {
+  left: -11px;
+}
+
+.boarding-pass__perforation::after {
+  right: -11px;
+}
+
+.boarding-pass__description {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ink);
+  margin: 0;
+  padding: 12px 22px 16px;
 }

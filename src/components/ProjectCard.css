@@ -3,9 +3,18 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
 }
 
 .project-card__frame {
+  position: relative;
   width: 220px;
   height: 170px;
   border-radius: 6px;
@@ -13,6 +22,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.project-card__overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0);
+  color: var(--card-cream);
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    background 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.project-card:hover .project-card__overlay {
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 1;
 }
 
 .project-card--ecole .project-card__frame {
