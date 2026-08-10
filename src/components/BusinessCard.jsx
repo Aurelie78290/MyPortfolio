@@ -41,6 +41,29 @@ function BusinessCard() {
 
   return (
     <section id="qui-suis-je" className="business-card">
+      <div className="business-card__stamp-hint" aria-hidden="true">
+        <span className="business-card__stamp-hint-text">Click me !</span>
+        <svg
+          className="business-card__stamp-hint-arrow"
+          viewBox="0 0 72 50"
+          fill="none"
+        >
+          <path
+            d="M4,4 Q57,8 66,42"
+            stroke="var(--pink-card-frame)"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M57,36 L67,44 L55,47"
+            stroke="var(--pink-card-frame)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
       <button
         type="button"
         className="business-card__stamp"

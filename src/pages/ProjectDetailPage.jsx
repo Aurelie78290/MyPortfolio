@@ -1,4 +1,5 @@
 import { Link, useParams } from "react-router-dom";
+import { SiGithub } from "react-icons/si";
 import { ecoleProjects, personnelsProjects } from "../data/projects.js";
 import "./ProjectDetailPage.css";
 
@@ -35,6 +36,7 @@ function ProjectDetailPage() {
     longDescription,
     tools,
     url,
+    githubUrl,
     hosting,
     videoSrc,
     features,
@@ -66,7 +68,7 @@ function ProjectDetailPage() {
         <div className="project-detail__info">
           <h1 className="project-detail__title">{title}</h1>
 
-          {url && (
+          {url ? (
             <a
               href={`https://${url.replace(/^https?:\/\//, "")}`}
               target="_blank"
@@ -75,6 +77,17 @@ function ProjectDetailPage() {
             >
               {url}
             </a>
+          ) : (
+            githubUrl && (
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="project-detail__url project-detail__url--github"
+              >
+                <SiGithub /> Voir sur GitHub
+              </a>
+            )
           )}
 
           {hosting && hosting.length > 0 && (

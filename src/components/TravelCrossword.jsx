@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { travelCrosswordWords } from "../data/crossword.js";
 import "./TravelCrossword.css";
 
@@ -44,10 +44,18 @@ function buildGrid(words) {
   };
 }
 
+const ARROW_DELTAS = {
+  ArrowUp: [-1, 0],
+  ArrowDown: [1, 0],
+  ArrowLeft: [0, -1],
+  ArrowRight: [0, 1],
+};
+
 function TravelCrossword({ onClose }) {
   const grid = useMemo(() => buildGrid(travelCrosswordWords), []);
   const [answers, setAnswers] = useState({});
   const [checked, setChecked] = useState(false);
+  const inputRefs = useRef({});
 
   useEffect(() => {
     const closeOnEscape = (event) => {
@@ -61,6 +69,23 @@ function TravelCrossword({ onClose }) {
     const letter = value.slice(-1).toUpperCase();
     setAnswers((prev) => ({ ...prev, [key]: letter }));
     setChecked(false);
+  };
+
+  const handleKeyDown = (event, row, col) => {
+    const delta = ARROW_DELTAS[event.key];
+    if (!delta) return;
+    event.preventDefault();
+    let r = row + delta[0];
+    let c = col + delta[1];
+    while (r >= 0 && r < grid.rows && c >= 0 && c < grid.cols) {
+      const key = cellKey(r, c);
+      if (grid.letters.has(key)) {
+        inputRefs.current[key]?.focus();
+        return;
+      }
+      r += delta[0];
+      c += delta[1];
+    }
   };
 
   const isComplete = useMemo(() => {
@@ -94,12 +119,16 @@ function TravelCrossword({ onClose }) {
         <div key={key} className="crossword__cell">
           {number && <span className="crossword__cell-number">{number}</span>}
           <input
+            ref={(el) => {
+              inputRefs.current[key] = el;
+            }}
             className={`crossword__cell-input${
               isCorrect ? " crossword__cell-input--correct" : ""
             }${isWrong ? " crossword__cell-input--wrong" : ""}`}
             maxLength={1}
             value={value}
             onChange={(event) => handleChange(key, event.target.value)}
+            onKeyDown={(event) => handleKeyDown(event, row, col)}
             aria-label={`Case ligne ${row + 1}, colonne ${col + 1}`}
           />
         </div>
@@ -130,8 +159,9 @@ function TravelCrossword({ onClose }) {
           <div
             className="crossword__grid"
             style={{
-              gridTemplateColumns: `repeat(${grid.cols}, 1fr)`,
-              gridTemplateRows: `repeat(${grid.rows}, 1fr)`,
+              gridTemplateColumns: `repeat(${grid.cols}, minmax(0, 1fr))`,
+              gridTemplateRows: `repeat(${grid.rows}, minmax(0, 1fr))`,
+              aspectRatio: `${grid.cols} / ${grid.rows}`,
             }}
           >
             {cells}
