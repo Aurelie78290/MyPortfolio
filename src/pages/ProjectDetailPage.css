@@ -57,7 +57,7 @@
   min-width: 0;
   display: flex;
   flex-direction: column;
-  gap: 14px;
+  gap: 36px;
 }
 
 .project-detail__title {
@@ -75,6 +75,12 @@
 
 .project-detail__url:hover {
   color: var(--pink-card);
+}
+
+.project-detail__url--github {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .project-detail__hosting {
