@@ -3,7 +3,8 @@ import { TOOL_ICONS } from "../data/toolIcons.js";
 import "./BoardingPassCard.css";
 
 function BoardingPassCard({ project }) {
-  const { id, title, description, tools, hosting, url, image } = project;
+  const { id, title, description, tools, hosting, url, image, logo } =
+    project;
 
   return (
     <Link to={`/projets/${id}`} className="boarding-pass">
@@ -50,8 +51,14 @@ function BoardingPassCard({ project }) {
             </span>
           </div>
         </div>
-        <div className="boarding-pass__photo">
-          {image ? (
+        <div
+          className={`boarding-pass__photo${
+            logo ? " boarding-pass__photo--logo" : ""
+          }`}
+        >
+          {logo ? (
+            <img src={logo} alt={`Logo ${title}`} />
+          ) : image ? (
             <img src={image} alt={title} />
           ) : (
             <div className="boarding-pass__photo-placeholder" />

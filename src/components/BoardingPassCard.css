@@ -152,6 +152,15 @@
   object-fit: cover;
 }
 
+.boarding-pass__photo--logo {
+  mask-image: none;
+  -webkit-mask-image: none;
+}
+
+.boarding-pass__photo--logo img {
+  object-fit: contain;
+}
+
 .boarding-pass__photo-placeholder {
   width: 100%;
   height: 100%;
