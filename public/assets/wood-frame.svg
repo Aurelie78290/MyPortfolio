@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+  <polygon points="0,0 100,0 78,22 22,22" fill="#d9d9dc" />
+  <polygon points="100,0 100,100 78,78 78,22" fill="#c7c7cc" />
+  <polygon points="100,100 0,100 22,78 78,78" fill="#d1d1d5" />
+  <polygon points="0,100 0,0 22,22 22,78" fill="#bdbdc3" />
+  <g fill="none" stroke="#8a8a90" stroke-width="1.2" stroke-linecap="round">
+    <rect x="0.6" y="0.6" width="98.8" height="98.8" />
+    <rect x="22" y="22" width="56" height="56" />
+    <line x1="0" y1="0" x2="22" y2="22" />
+    <line x1="100" y1="0" x2="78" y2="22" />
+    <line x1="100" y1="100" x2="78" y2="78" />
+    <line x1="0" y1="100" x2="22" y2="78" />
+  </g>
+  <g fill="none" stroke="#707078" stroke-width="1" stroke-linecap="round" opacity="0.4">
+    <path d="M28,7 Q50,5 72,8" />
+    <path d="M30,13 Q50,16 70,12" />
+    <path d="M26,18 Q50,15 74,19" />
+    <path d="M28,93 Q50,95 72,92" />
+    <path d="M30,87 Q50,84 70,88" />
+    <path d="M26,82 Q50,85 74,81" />
+    <path d="M7,28 Q5,50 8,72" />
+    <path d="M13,30 Q16,50 12,70" />
+    <path d="M18,26 Q15,50 19,74" />
+    <path d="M93,28 Q95,50 92,72" />
+    <path d="M87,30 Q84,50 88,70" />
+    <path d="M82,26 Q85,50 81,74" />
+  </g>
+</svg>

@@ -42,7 +42,7 @@ function BusinessCard() {
   return (
     <section id="qui-suis-je" className="business-card">
       <div className="business-card__stamp-hint" aria-hidden="true">
-        <span className="business-card__stamp-hint-text">Click me !</span>
+        <span className="business-card__stamp-hint-text">Click here !</span>
         <svg
           className="business-card__stamp-hint-arrow"
           viewBox="0 0 72 50"
