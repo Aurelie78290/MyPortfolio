@@ -75,11 +75,21 @@ export const ecoleProjects = [
   {
     id: "ecole-3",
     title: "The Wild Brick",
-    description: "Déscription du projet réalisé en formation.",
+    description: "Site web fan/e-commerce dédié aux passionnés de LEGO.",
+    longDescription:
+      "The Wild Brick est un site web fictif dédié à la communauté LEGO, combinant une boutique en ligne et un espace communautaire (galerie de créations, événements, système d'avis). Projet pédagogique réalisé en équipe de 6 sur plusieurs sprints (branches Git dédiées, pull requests, merges), dans le cadre de ma formation développeur web.",
     videoSrc: "",
     url: "",
     githubUrl: "https://github.com/Aurelie78290/The-Wild-Brick",
     tools: ["HTML", "CSS3", "JavaScript", "GitHub", "Figma"],
+    features: [
+      "**Boutique avec panier d'achat** persistant (localStorage) et **caroussel** de produits swipe/drag.",
+      "Galerie de créations utilisateurs avec **système de commentaires et notation**",
+      "**Mode clair/sombre** persistant",
+      "**Navigation responsive** avec menu burger et media queries",
+      "**Effets de parallaxe** et vidéo d'arrière-plan",
+      "**Bannière de consentement cookies** et page de mentions légales",
+    ],
   },
 ];
 
@@ -88,7 +98,7 @@ export const personnelsProjects = [
     id: "perso-1",
     title: "Portfolio",
     description:
-      "Ce portfolio : un site vitrine développé from scratch pour présenter mon parcours et mes projets.",
+      "Ce portfolio : un site vitrine développé pour présenter mon parcours et mes projets.",
     longDescription:
       "Ce portfolio est développé en React (Vite), avec un routing géré par React Router pour séparer la page d'accueil, la page projets et les pages détail de chaque projet. Aucun framework UI : tout le design (variables CSS, cartes, animations, responsive) est écrit en CSS pur, pour garder un contrôle total sur le rendu et le style « fait main » recherché.\n\nAu-delà de la structure classique (présentation, compétences, projets), le site intègre quelques touches interactives pensées pour sortir du portfolio générique : une carte de visite avec un tampon caché qui ouvre un mini-jeu de mots croisés sur le thème du voyage, et des cartes projet façon carte d'embarquement pour le projet mis en avant.",
     videoSrc: "",
@@ -122,8 +132,8 @@ export const personnelsProjects = [
       "TypeScript",
       "GitHub",
       "Vite",
-      "Recharts",
       "JWT",
+      "Recharts",
       "bcrypt",
       "Cloudinary",
       "Resend",
@@ -140,5 +150,28 @@ export const personnelsProjects = [
       "**Authentification par rôle** (coach / élève), gestion de compte avec expiration, réinitialisation de mot de passe autonome",
       "Attention portée à la **sécurité** (JWT, bcrypt, rate-limiting, sanitizationXSS, CORS strict) et au **responsive mobile**",
     ],
+  },
+];
+
+export const hackathonsProjects = [
+  {
+    id: "hackathon-1",
+    title: "Hackathon à venir",
+    description: "Déscription du projet à venir.",
+    longDescription: "Déscription du projet à venir.",
+    videoSrc: "",
+    url: "",
+    githubUrl: "",
+    tools: [],
+  },
+  {
+    id: "hackathon-2",
+    title: "Hackathon à venir",
+    description: "Déscription du projet à venir.",
+    longDescription: "Déscription du projet à venir.",
+    videoSrc: "",
+    url: "",
+    githubUrl: "",
+    tools: [],
   },
 ];

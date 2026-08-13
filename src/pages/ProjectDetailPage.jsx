@@ -1,6 +1,10 @@
 import { Link, useParams } from "react-router-dom";
 import { SiGithub } from "react-icons/si";
-import { ecoleProjects, personnelsProjects } from "../data/projects.js";
+import {
+  ecoleProjects,
+  personnelsProjects,
+  hackathonsProjects,
+} from "../data/projects.js";
 import "./ProjectDetailPage.css";
 
 function renderWithBold(text) {
@@ -15,9 +19,11 @@ function renderWithBold(text) {
 
 function ProjectDetailPage() {
   const { id } = useParams();
-  const project = [...ecoleProjects, ...personnelsProjects].find(
-    (item) => item.id === id
-  );
+  const project = [
+    ...ecoleProjects,
+    ...personnelsProjects,
+    ...hackathonsProjects,
+  ].find((item) => item.id === id);
 
   if (!project) {
     return (
