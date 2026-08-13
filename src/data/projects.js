@@ -6,6 +6,7 @@ export const ecoleProjects = [
     longDescription:
       "L'Ecrin du Temps a été pensé comme une plateforme exclusive dédiée aux passionnés et collectionneurs de montres de luxe. Elle a une double vocation : e-commerce d'une part et un côté communautaire d'autre part (possibilité de créer et suivre sa propre collection ou encore accéder à du contenu éditorial spécifique). Ce projet a été réalisé en équipe de 6 développeurs sur plusieurs sprints (branches Git dédiées, pull requests, merges) et c'est celui que j'ai choisi de présenter lors de ma soutenance pour la certification de développeuse web & web mobile.\n\nTechniquement, l'application repose sur 3 couches : la couche de présentation avec React, la logique métier côté serveur avec node.js et Express et enfin l'accès aux données via une base de données relationnelles MySql. Le Front-End envoie des requêtes Http àà l'api express, les controllers appliquent la logique métier puis interrogent la BDD via les repositories. Les résulatts sont ensuite renvoyés au fron-end au format Json afin d'être affichés dynamiquement dans l'application.",
     image: "/assets/ecrin_du_temps.png",
+    screenshots: ["/assets/edt_photo1.png"],
     videoSrc: "/assets/ecrin_du_temps_video.mp4",
     url: "",
     githubUrl:
@@ -126,6 +127,7 @@ export const personnelsProjects = [
     url: "www.cpkacademy.com",
     image: "/assets/cpk-academy.png",
     logo: "/assets/logocpk.png",
+    screenshots: ["/assets/cpk_photo1.png"],
     hosting: ["Vercel", "Railway"],
     tools: [
       "React",
@@ -160,21 +162,46 @@ export const hackathonsProjects = [
   {
     id: "hackathon-1",
     title: "Tatooine Interim",
-    description: "Déscription du projet à venir.",
-    longDescription: "Déscription du projet à venir.",
+    description:
+      "Site vitrine parodique d'une agence de recrutement de mercenaires façon Star Wars",
+    longDescription:
+      "Site vitrine humoristique d'une agence de recrutement de mercenaires dans l'univers Star Wars, développé en équipe lors d'un hackathon d'école (Hackaton Star Wars de 24h). Le site présente les services de l'agence, ses missions, une page carrières et un formulaire de contact, ainsi qu'un registre de mercenaires interactif consommant une API publique, avec recherche en temps réel et filtres par espèce et planète d'origine.\n\nMa contribution : développement de la page Mercenaires (fetch de données via une API externe, logique de recherche/filtrage, affichage en grille avec modale de détail)",
+    image: "/assets/tatooine.png",
     videoSrc: "",
     url: "",
-    githubUrl: "",
-    tools: [],
+    githubUrl: "https://github.com/Aurelie78290/Tatooine_Interim",
+    tools: ["React", "TypeScript", "React Router", "Express", "Vite"],
+    features: [
+      "**Site multi-pages** avec React Router (6 pages : Accueil, Mercenaires, Missions, Recrutement, À propos, Contact)",
+      "**Landing « secrète »** sur `/` (image cliquable façon easter egg) qui redirige vers le site réel — le header/nav n'apparaît que sur les autres pages",
+      "**Récupération de données des mercenaires via une API externe** (Context API + fetch dans un `DataProvider`)",
+      "**Recherche en temps réel** par nom de mercenaire",
+      "**Filtres combinables** par espèce et par planète d'origine, avec bouton de réinitialisation",
+      "**Grille de fiches mercenaires** (image, espèce, monde) avec modale « Fiche du Mandale » menant vers le contact",
+      "**FAQ en accordéon** (ouverture/fermeture, une seule section visible à la fois)",
+      "**Témoignages clients** en grille de cartes avatar + citation",
+      "**Formulaire de contact contrôlé** (nom, email, téléphone, code secret, crédits, message)",
+    ],
   },
   {
     id: "hackathon-2",
     title: "Druidolib",
-    description: "Déscription du projet à venir.",
-    longDescription: "Déscription du projet à venir.",
+    description:
+      "Druidolib est un annuaire enchanté qui rassemble Druides, Sorcières, Devins et autres praticiens mystiques pour vous accompagner avec bienveillance, humour et un soupçon de magie.",
+    longDescription:
+      "Druidolib est un annuaire fantasy mettant en relation des utilisateurs avec des praticiens de médecines douces imaginaires (Druides, Sorcières, Chamans, Devins). Hackaton en équipe (4 personnes, durant 24h), avec recherche et fiches de praticiens consommées depuis une API REST. Le point fort : le toggle clair/sombre ne change pas que la couleur, il fait aussi basculer tous les textes du site entre un ton bienveillant et un ton sombre/sarcastique, via un détournement créatif d'i18next.\n\nJ'ai développé la page de détail d'un praticien (/details/:id) : récupération des données via l'API REST (fetch par id), mise en page (portrait, présentation, spécialité, tarif, localisation avec illustration du lieu), puis passage en responsive. J'ai également créé la page NotFound (404), avec son propre visuel et sa mise en page dédiée.",
+    image: "/assets/druidolib.png",
     videoSrc: "",
     url: "",
-    githubUrl: "",
-    tools: [],
+    githubUrl: "https://github.com/Aurelie78290/Druidolib",
+    tools: ["React", "TypeScript", "React Router", "Express", "Vite"],
+    features: [
+      "**Recherche et filtrage des praticiens** (texte + badges par catégorie)",
+      "**Fiche détail par praticien** (photo, spécialité, tarif, lieu)",
+      "**Page À propos** : carrousel équipe, FAQ accordéon, témoignages",
+      "**Formulaire de contact** avec validation, anti-bot, modale de confirmation",
+      "**Thème clair/sombre persistant**, couplé au changement de ton éditorial (i18next)",
+      "**Navigation SPA** (React Router), design accessible et responsive",
+    ],
   },
 ];
