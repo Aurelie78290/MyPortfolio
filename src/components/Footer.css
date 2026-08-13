@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin-top: 100px;
+  padding: 32px 24px;
+  background: var(--title);
+  border-top: 2px solid var(--pink-card-frame);
+}
+
+.footer__signature {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.4rem;
+  color: var(--pink-card);
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer__links a {
+  color: var(--card-cream);
+  text-decoration: none;
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s ease;
+}
+
+.footer__links a:hover {
+  color: var(--pink-card);
+}
+
+.footer__copyright {
+  font-size: 0.7rem;
+  color: rgba(234, 231, 236, 0.6);
+}

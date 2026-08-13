@@ -5,6 +5,7 @@ import {
   personnelsProjects,
   hackathonsProjects,
 } from "../data/projects.js";
+import { TOOL_ICONS } from "../data/toolIcons.js";
 import "./ProjectDetailPage.css";
 
 function renderWithBold(text) {
@@ -46,8 +47,12 @@ function ProjectDetailPage() {
     hosting,
     videoSrc,
     features,
+    screenshots,
   } = project;
   const descriptionParagraphs = (longDescription || description).split("\n\n");
+  const iconTools = tools.filter((tool) => TOOL_ICONS[tool]);
+  const textTools = tools.filter((tool) => !TOOL_ICONS[tool]);
+  const orderedTools = [...iconTools, ...textTools];
 
   return (
     <section className="project-detail">
@@ -103,9 +108,26 @@ function ProjectDetailPage() {
           )}
 
           <ul className="project-detail__tools">
-            {tools.map((tool) => (
-              <li key={tool}>{tool}</li>
-            ))}
+            {orderedTools.map((tool) => {
+              const match = TOOL_ICONS[tool];
+              return (
+                <li
+                  key={tool}
+                  title={tool}
+                  className={
+                    match
+                      ? "project-detail__tool--icon"
+                      : "project-detail__tool--text"
+                  }
+                >
+                  {match ? (
+                    <match.Icon title={tool} color={match.color} />
+                  ) : (
+                    tool
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
@@ -115,6 +137,18 @@ function ProjectDetailPage() {
           <p key={index}>{paragraph}</p>
         ))}
       </div>
+
+      {screenshots && screenshots.length > 0 && (
+        <div className="project-detail__filmstrip">
+          <div className="project-detail__filmstrip-frames">
+            {screenshots.map((src, index) => (
+              <div className="project-detail__filmstrip-frame" key={src}>
+                <img src={src} alt={`Capture d'écran ${title} ${index + 1}`} />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {features && features.length > 0 && (
         <div className="project-detail__features">

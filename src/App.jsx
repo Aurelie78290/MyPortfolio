@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import ScrollToHash from './components/ScrollToHash.jsx'
+import Footer from './components/Footer.jsx'
 import HomePage from './pages/HomePage.jsx'
 import ProjectsPage from './pages/ProjectsPage.jsx'
 import ProjectDetailPage from './pages/ProjectDetailPage.jsx'
@@ -18,6 +19,7 @@ function App() {
           <Route path="/projets/:id" element={<ProjectDetailPage />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }
