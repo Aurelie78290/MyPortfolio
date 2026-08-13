@@ -4,9 +4,9 @@ export const ecoleProjects = [
     title: "Ecrin du Temps",
     description: "Market-Place spécialisé dans la vente des montres de luxe.",
     longDescription:
-      "L'Ecrin du Temps a été pensé comme une plateforme exclusive dédiée aux passionnés et collectionneurs de montres de luxe. Elle a une double vocation : e-commerce d'une part et un côté communautaire d'autre part (possibilité de créer et suivre sa propre collection ou encore accéder à du contenu éditorial spécifique). Techniquement, l'application repose sur 3 couches : la couche de présentation avec React, la logique métier côté serveur avec node.js et Express et enfin l'accès aux données via une base de données relationnelles MySql. Le Front-End envoie des requêtes Http àà l'api express, les controllers appliquent la logique métier puis interrogent la BDD via les repositories. Les résulatts sont ensuite renvoyés au fron-end au format Json afin d'être affichés dynamiquement dans l'application.",
+      "L'Ecrin du Temps a été pensé comme une plateforme exclusive dédiée aux passionnés et collectionneurs de montres de luxe. Elle a une double vocation : e-commerce d'une part et un côté communautaire d'autre part (possibilité de créer et suivre sa propre collection ou encore accéder à du contenu éditorial spécifique). Ce projet a été réalisé en équipe de 6 développeurs sur plusieurs sprints (branches Git dédiées, pull requests, merges) et c'est celui que j'ai choisi de présenter lors de ma soutenance pour la certification de développeuse web & web mobile.\n\nTechniquement, l'application repose sur 3 couches : la couche de présentation avec React, la logique métier côté serveur avec node.js et Express et enfin l'accès aux données via une base de données relationnelles MySql. Le Front-End envoie des requêtes Http àà l'api express, les controllers appliquent la logique métier puis interrogent la BDD via les repositories. Les résulatts sont ensuite renvoyés au fron-end au format Json afin d'être affichés dynamiquement dans l'application.",
     image: "/assets/ecrin_du_temps.png",
-    videoSrc: "",
+    videoSrc: "/assets/ecrin_du_temps_video.mp4",
     url: "",
     githubUrl:
       "https://github.com/ChickenCodeSchool/Js-Crew809-TeamRocket-P3-G1-lecrindutemps",
@@ -45,7 +45,8 @@ export const ecoleProjects = [
     title: "MoveUp",
     description: "Plateforme de coaching sportif.",
     longDescription:
-      "MoveUp est une application de coaching sportif en ligne qui aide les utilisateurs à faire du sport à leur rythme, depuis chez eux, grâce à des programmes personnalisés et des vidéos d'exercices encadrés et réalisés par des coachs professionnels.",
+      "MoveUp est une application de coaching sportif en ligne qui aide les utilisateurs à faire du sport à leur rythme, depuis chez eux, grâce à des programmes personnalisés et des vidéos d'exercices encadrés et réalisés par des coachs professionnels. Ce projet pédagogique a été réalisé en équipe de 6 collègues développeurs, dans le cadre de ma formation à la Wild Code School, sur plusieurs sprints (branches Git dédiées, pull requests, merges)",
+    image: "/assets/moveUp.png",
     videoSrc: "",
     url: "",
     githubUrl:
@@ -78,6 +79,7 @@ export const ecoleProjects = [
     description: "Site web fan/e-commerce dédié aux passionnés de LEGO.",
     longDescription:
       "The Wild Brick est un site web fictif dédié à la communauté LEGO, combinant une boutique en ligne et un espace communautaire (galerie de créations, événements, système d'avis). Projet pédagogique réalisé en équipe de 6 sur plusieurs sprints (branches Git dédiées, pull requests, merges), dans le cadre de ma formation développeur web.",
+    image: "/assets/the_wild_brick.png",
     videoSrc: "",
     url: "",
     githubUrl: "https://github.com/Aurelie78290/The-Wild-Brick",
@@ -123,6 +125,7 @@ export const personnelsProjects = [
     videoSrc: "",
     url: "www.cpkacademy.com",
     image: "/assets/cpk-academy.png",
+    logo: "/assets/logocpk.png",
     hosting: ["Vercel", "Railway"],
     tools: [
       "React",
@@ -156,7 +159,7 @@ export const personnelsProjects = [
 export const hackathonsProjects = [
   {
     id: "hackathon-1",
-    title: "Hackathon à venir",
+    title: "Tatooine Interim",
     description: "Déscription du projet à venir.",
     longDescription: "Déscription du projet à venir.",
     videoSrc: "",
@@ -166,7 +169,7 @@ export const hackathonsProjects = [
   },
   {
     id: "hackathon-2",
-    title: "Hackathon à venir",
+    title: "Druidolib",
     description: "Déscription du projet à venir.",
     longDescription: "Déscription du projet à venir.",
     videoSrc: "",
