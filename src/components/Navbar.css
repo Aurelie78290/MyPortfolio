@@ -29,19 +29,46 @@
 }
 
 .navbar__pill {
+  position: relative;
+  isolation: isolate;
   background: var(--title);
-  color: var(--card-cream);
+  color: #ffffff;
   text-decoration: none;
   font-size: 0.85rem;
   letter-spacing: 0.02em;
   font-weight: 600;
-  padding: 6px 25px;
+  padding: 3px 25px 13px;
   border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navbar__pill::before,
+.navbar__pill::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: inherit;
+  border-radius: 50%;
   transition: background 0.2s ease;
 }
 
+.navbar__pill::before {
+  width: 60%;
+  height: 130%;
+  top: -65%;
+  left: 10%;
+}
+
+.navbar__pill::after {
+  width: 42%;
+  height: 90%;
+  top: -38%;
+  right: 14%;
+}
+
 .navbar__pill:hover {
-  background: var(--pink-card);
+  background: #ffffff;
+  color: var(--pink-card-frame);
 }
 
 @media (max-width: 700px) {
