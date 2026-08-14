@@ -48,7 +48,8 @@ export const ecoleProjects = [
     longDescription:
       "MoveUp est une application de coaching sportif en ligne qui aide les utilisateurs à faire du sport à leur rythme, depuis chez eux, grâce à des programmes personnalisés et des vidéos d'exercices encadrés et réalisés par des coachs professionnels. Ce projet pédagogique a été réalisé en équipe de 6 collègues développeurs, dans le cadre de ma formation à la Wild Code School, sur plusieurs sprints (branches Git dédiées, pull requests, merges)",
     image: "/assets/moveUp.png",
-    videoSrc: "",
+    videoSrc: "/assets/video_moveup.mp4",
+    screenshots: ["/assets/moveup_photo1.png"],
     url: "",
     githubUrl:
       "https://github.com/ChickenCodeSchool/Js-Crew809-TeamRocket-P2-G2-moveup",
@@ -81,7 +82,8 @@ export const ecoleProjects = [
     longDescription:
       "The Wild Brick est un site web fictif dédié à la communauté LEGO, combinant une boutique en ligne et un espace communautaire (galerie de créations, événements, système d'avis). Projet pédagogique réalisé en équipe de 6 sur plusieurs sprints (branches Git dédiées, pull requests, merges), dans le cadre de ma formation développeur web.",
     image: "/assets/the_wild_brick.png",
-    videoSrc: "",
+    screenshots: ["/assets/the_wild_brick_photo1.png"],
+    videoSrc: "/assets/video_wild_brick.mp4",
     url: "",
     githubUrl: "https://github.com/Aurelie78290/The-Wild-Brick",
     tools: ["HTML", "CSS3", "JavaScript", "GitHub", "Figma"],
@@ -104,7 +106,8 @@ export const personnelsProjects = [
       "Ce portfolio : un site vitrine développé pour présenter mon parcours et mes projets.",
     longDescription:
       "Ce portfolio est développé en React (Vite), avec un routing géré par React Router pour séparer la page d'accueil, la page projets et les pages détail de chaque projet. Aucun framework UI : tout le design (variables CSS, cartes, animations, responsive) est écrit en CSS pur, pour garder un contrôle total sur le rendu et le style « fait main » recherché.\n\nAu-delà de la structure classique (présentation, compétences, projets), le site intègre quelques touches interactives pensées pour sortir du portfolio générique : une carte de visite avec un tampon caché qui ouvre un mini-jeu de mots croisés sur le thème du voyage, et des cartes projet façon carte d'embarquement pour le projet mis en avant.",
-    videoSrc: "",
+    videoSrc: "/assets/video_portfolio.mp4",
+    screenshots: ["/assets/portfolio_photo1.png"],
     url: "",
     image: "/assets/portfolio.png",
     tools: ["React", "Vite", "React Router", "CSS3", "GitHub"],
@@ -123,7 +126,7 @@ export const personnelsProjects = [
       "Plateforme de coaching Poker : Suivi de la progression et entraînement des élèves.",
     longDescription:
       "CPK Academy est une plateforme de coaching poker que j'ai développée en solo, de la conception à la mise en production, pour un coach professionnel et sa communauté d'élèves. L'objectif : donner au coach des outils pour suivre la progression de chaque élève, et aux élèves un espace d'entraînement structuré (analyse de mains, quiz, suivi d'objectifs).\n\nLe projet est en production réelle depuis 05/07/2026, utilisé par un coach professionnel d'une part pour sa visibilité et présentation de quelques contenus pédagogiques, d'autre part pour ses élèves au quotidien grâce à un système de connexion sécurisé.",
-    videoSrc: "",
+    videoSrc: "/assets/video_cpk.mp4",
     url: "www.cpkacademy.com",
     image: "/assets/cpk-academy.png",
     logo: "/assets/logocpk.png",
@@ -167,7 +170,8 @@ export const hackathonsProjects = [
     longDescription:
       "Site vitrine humoristique d'une agence de recrutement de mercenaires dans l'univers Star Wars, développé en équipe lors d'un hackathon d'école (Hackaton Star Wars de 24h). Le site présente les services de l'agence, ses missions, une page carrières et un formulaire de contact, ainsi qu'un registre de mercenaires interactif consommant une API publique, avec recherche en temps réel et filtres par espèce et planète d'origine.\n\nMa contribution : développement de la page Mercenaires (fetch de données via une API externe, logique de recherche/filtrage, affichage en grille avec modale de détail)",
     image: "/assets/tatooine.png",
-    videoSrc: "",
+    videoSrc: "/assets/video_tatooine.mp4",
+    screenshots: ["/assets/tatooine_photo1.png"],
     url: "",
     githubUrl: "https://github.com/Aurelie78290/Tatooine_Interim",
     tools: ["React", "TypeScript", "React Router", "Express", "Vite"],
@@ -191,7 +195,8 @@ export const hackathonsProjects = [
     longDescription:
       "Druidolib est un annuaire fantasy mettant en relation des utilisateurs avec des praticiens de médecines douces imaginaires (Druides, Sorcières, Chamans, Devins). Hackaton en équipe (4 personnes, durant 24h), avec recherche et fiches de praticiens consommées depuis une API REST. Le point fort : le toggle clair/sombre ne change pas que la couleur, il fait aussi basculer tous les textes du site entre un ton bienveillant et un ton sombre/sarcastique, via un détournement créatif d'i18next.\n\nJ'ai développé la page de détail d'un praticien (/details/:id) : récupération des données via l'API REST (fetch par id), mise en page (portrait, présentation, spécialité, tarif, localisation avec illustration du lieu), puis passage en responsive. J'ai également créé la page NotFound (404), avec son propre visuel et sa mise en page dédiée.",
     image: "/assets/druidolib.png",
-    videoSrc: "",
+    videoSrc: "/assets/video_druidolib.mp4",
+    screenshots: ["/assets/druidolib_photo1.png"],
     url: "",
     githubUrl: "https://github.com/Aurelie78290/Druidolib",
     tools: ["React", "TypeScript", "React Router", "Express", "Vite"],

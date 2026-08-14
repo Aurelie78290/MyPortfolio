@@ -99,7 +99,7 @@ function BusinessCard() {
             besoins et concevoir des solutions utiles.
             <br /> Curieuse de nature, je puise mon inspiration dans les voyages
             en terres nordiques, la création textile, le golf, la danse
-            classique ou encore les mots fléchés. Des passions qui cultivent ma
+            classique ou encore les mots croisés. Des passions qui cultivent ma
             créativité, ma rigueur et mon sens de l'observation, et qui
             façonnent ma manière de développer. »
           </p>

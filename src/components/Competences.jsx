@@ -183,7 +183,31 @@ function Competences() {
             >
               ×
             </button>
-            <h3 className="competences__modal-title">{active.label}</h3>
+            {active.id === "soft-skills" && (
+              <img
+                src="/assets/Vegvisir.svg.webp"
+                alt=""
+                aria-hidden="true"
+                className="competences__soft-skills-decoration"
+              />
+            )}
+            {active.id === "etudes" && (
+              <span
+                aria-hidden="true"
+                className="competences__etudes-decoration"
+              >
+                🎓
+              </span>
+            )}
+            <h3
+              className={`competences__modal-title${
+                active.id === "soft-skills"
+                  ? " competences__modal-title--indent"
+                  : ""
+              }`}
+            >
+              {active.label}
+            </h3>
             {active.type === "tags" ? (
               <div className="competences__marquee-rows">
                 {skillGroups.map((group, rowIndex) => {
@@ -214,13 +238,28 @@ function Competences() {
                 })}
               </div>
             ) : (
-              (Array.isArray(active.text) ? active.text : [active.text]).map(
-                (paragraph, index) => (
+              <>
+                {(Array.isArray(active.text)
+                  ? active.text
+                  : [active.text]
+                ).map((paragraph, index) => (
                   <p key={index} className="competences__placeholder">
                     {paragraph}
                   </p>
-                ),
-              )
+                ))}
+                {active.id === "etudes" && (
+                  <a
+                    href={encodeURI(
+                      "/assets/Diplôme_certification RNCP.jpg",
+                    )}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="competences__certification-link"
+                  >
+                    Ma certification
+                  </a>
+                )}
+              </>
             )}
           </div>
         </div>
