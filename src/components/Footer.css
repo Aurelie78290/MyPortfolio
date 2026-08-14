@@ -57,4 +57,27 @@
 .footer__copyright {
   font-size: 0.7rem;
   color: rgba(234, 231, 236, 0.6);
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    margin-top: 72px;
+    padding: 28px 20px 24px;
+    gap: 10px;
+  }
+
+  .footer__chaussons {
+    left: 20px;
+    width: 34px;
+  }
+
+  .footer__danseuse {
+    right: 20px;
+    width: 78px;
+  }
+
+  .footer__links {
+    gap: 1rem;
+  }
 }
