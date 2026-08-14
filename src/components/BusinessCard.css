@@ -188,9 +188,19 @@
   text-decoration: underline;
 }
 
+@media (max-width: 1024px) {
+  .business-card {
+    padding: 40px 32px;
+  }
+}
+
 @media (max-width: 700px) {
+  .business-card {
+    padding: 28px 20px;
+  }
   .business-card__body {
     flex-direction: column;
+    gap: 24px;
   }
   .business-card__divider {
     width: 100%;
@@ -198,5 +208,25 @@
   }
   .business-card__stamp-hint {
     display: none;
+  }
+  .business-card__stamp {
+    top: 16px;
+    right: 16px;
+    width: 54px;
+    height: 66px;
+  }
+  .business-card__header {
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .business-card__avatar {
+    width: 64px;
+    height: 64px;
+  }
+  .business-card__title {
+    font-size: 1.4rem;
+  }
+  .business-card__signature {
+    padding-right: 0;
   }
 }
