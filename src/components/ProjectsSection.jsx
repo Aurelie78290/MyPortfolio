@@ -1,3 +1,4 @@
+import { Fragment } from 'react'
 import ProjectCard from './ProjectCard.jsx'
 import './ProjectsSection.css'
 
@@ -41,13 +42,31 @@ function ProjectsSection({ title, projects, variant, clothesline, decoration }) 
             </svg>
           )}
           {projects.map((project, index) => (
-            <ProjectCard
-              key={project.id}
-              project={project}
-              variant={variant}
-              clothesline={clothesline}
-              clipColor={CLIP_COLORS[index % CLIP_COLORS.length]}
-            />
+            <Fragment key={project.id}>
+              {clothesline && (
+                <svg
+                  className="projects-section__string--item"
+                  viewBox="0 0 100 30"
+                  preserveAspectRatio="none"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M0,6 Q50,22 100,6"
+                    fill="none"
+                    stroke="#4a4a4a"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    vectorEffect="non-scaling-stroke"
+                  />
+                </svg>
+              )}
+              <ProjectCard
+                project={project}
+                variant={variant}
+                clothesline={clothesline}
+                clipColor={CLIP_COLORS[index % CLIP_COLORS.length]}
+              />
+            </Fragment>
           ))}
         </div>
       ) : (
