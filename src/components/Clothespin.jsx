@@ -5,6 +5,7 @@ function Clothespin({ className, color = "#c9a06a" }) {
       width="18"
       height="30"
       viewBox="0 0 18 30"
+      preserveAspectRatio="none"
       fill="none"
       aria-hidden="true"
     >

@@ -35,7 +35,7 @@ function BoardingPassCard({ project }) {
           <div className="boarding-pass__row">
             <span className="boarding-pass__row-label">Seats</span>
             <span className="boarding-pass__row-value boarding-pass__tools">
-              {tools.map((tool) => {
+              {tools.slice(0, 5).map((tool) => {
                 const match = TOOL_ICONS[tool];
                 return match ? (
                   <match.Icon

@@ -3,61 +3,118 @@ import "./Competences.css";
 
 function FlightPathArrow({ flip }) {
   const arrowId = useId();
+  const arrowIdVertical = useId();
   const path = flip ? "M4,10 Q60,44 116,10" : "M4,30 Q60,-4 116,30";
+  const verticalPath = flip ? "M10,4 Q24,32 10,60" : "M22,4 Q8,32 22,60";
 
   return (
-    <svg
-      className="competences__connector"
-      viewBox="0 0 120 40"
-      aria-hidden="true"
-    >
-      <defs>
-        <marker
-          id={arrowId}
-          viewBox="0 0 10 10"
-          refX="7"
-          refY="5"
-          markerWidth="6"
-          markerHeight="6"
-          orient="auto-start-reverse"
-        >
-          <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
-        </marker>
-      </defs>
-      <path
-        d={path}
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeDasharray="6 6"
-        strokeLinecap="round"
-        markerEnd={`url(#${arrowId})`}
-      />
-    </svg>
-  );
-}
-
-function LandingPath() {
-  return (
-    <div className="competences__landing" aria-hidden="true">
+    <>
       <svg
-        className="competences__landing-path"
-        viewBox="0 0 200 60"
-        preserveAspectRatio="none"
+        className="competences__connector"
+        viewBox="0 0 120 40"
+        aria-hidden="true"
       >
+        <defs>
+          <marker
+            id={arrowId}
+            viewBox="0 0 10 10"
+            refX="7"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto-start-reverse"
+          >
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+          </marker>
+        </defs>
         <path
-          d="M4,8 Q100,52 185,30"
+          d={path}
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
           strokeDasharray="6 6"
           strokeLinecap="round"
+          markerEnd={`url(#${arrowId})`}
         />
       </svg>
-      <span className="competences__plane" role="img" aria-label="Avion">
-        ✈️
-      </span>
-    </div>
+      <svg
+        className="competences__connector-vertical"
+        viewBox="0 0 32 64"
+        aria-hidden="true"
+      >
+        <defs>
+          <marker
+            id={arrowIdVertical}
+            viewBox="0 0 10 10"
+            refX="7"
+            refY="5"
+            markerWidth="6"
+            markerHeight="6"
+            orient="auto-start-reverse"
+          >
+            <path d="M0,0 L10,5 L0,10 z" fill="currentColor" />
+          </marker>
+        </defs>
+        <path
+          d={verticalPath}
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeDasharray="6 6"
+          strokeLinecap="round"
+          markerEnd={`url(#${arrowIdVertical})`}
+        />
+      </svg>
+    </>
+  );
+}
+
+function LandingPath() {
+  return (
+    <>
+      <div className="competences__landing" aria-hidden="true">
+        <svg
+          className="competences__landing-path"
+          viewBox="0 0 200 60"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M4,8 Q100,52 185,30"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeDasharray="6 6"
+            strokeLinecap="round"
+          />
+        </svg>
+        <span className="competences__plane" role="img" aria-label="Avion">
+          ✈️
+        </span>
+      </div>
+      <div className="competences__landing-vertical" aria-hidden="true">
+        <svg
+          className="competences__landing-path-vertical"
+          viewBox="0 0 60 90"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M22,4 Q54,45 30,86"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeDasharray="6 6"
+            strokeLinecap="round"
+          />
+        </svg>
+        <span
+          className="competences__plane-vertical"
+          role="img"
+          aria-label="Avion"
+        >
+          ✈️
+        </span>
+      </div>
+    </>
   );
 }
 

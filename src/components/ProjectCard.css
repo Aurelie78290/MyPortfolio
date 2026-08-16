@@ -28,6 +28,7 @@
   filter: drop-shadow(0 2px 2px rgba(30, 20, 50, 0.35));
 }
 
+
 .project-card__badge {
   position: absolute;
   top: 12px;
@@ -230,4 +231,73 @@
 .project-card__tools li.project-card__tool--icon svg {
   width: 20px;
   height: 20px;
+}
+
+@media (max-width: 1024px) {
+  .project-card,
+  .project-card__frame {
+    width: 180px;
+  }
+
+  .project-card__flip {
+    height: 260px;
+  }
+}
+
+@media (max-width: 700px) {
+  .project-card,
+  .project-card__frame {
+    width: 150px;
+  }
+
+  .project-card__flip {
+    height: 220px;
+  }
+
+  .project-card__clip {
+    top: -23px;
+    width: 14px;
+    height: 23px;
+  }
+
+
+  .project-card__badge {
+    top: 8px;
+    right: 16px;
+    font-size: 0.55rem;
+    padding: 2px 9px;
+  }
+
+  .project-card--ecole .project-card__flip-face,
+  .project-card--personnel .project-card__flip-face,
+  .project-card--hackathon .project-card__flip-face {
+    padding: 30px 16px 10px;
+  }
+
+  .project-card__title {
+    font-size: 0.95rem;
+  }
+
+  .project-card__tools {
+    gap: 6px;
+  }
+
+  .project-card__tools li {
+    font-size: 0.58rem;
+    padding: 2px 7px;
+  }
+
+  .project-card__tools li.project-card__tool--icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .project-card__flip-consult {
+    font-size: 0.75rem;
+    padding: 3px 12px;
+  }
+
+  .project-card__flip-description {
+    font-size: 0.68rem;
+  }
 }
